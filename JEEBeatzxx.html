@@ -1,0 +1,213 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEEBeatz - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">JEEBeatz</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Beats</a></li>
+            <li><a href="#">Membership</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <a href="login.html" class="login-btn">Login</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Welcome to JEEBeatz</h1>
+        <p>Your one-stop shop for high-quality beats</p>
+        <a href="#" class="cta-button">Explore Beats</a>
+    </header>
+
+    <!-- Placeholder Sections -->
+    <section class="beats">
+        <h2>Featured Beats</h2>
+        <p>Audio previews and purchase options will go here.</p>
+    </section>
+
+    <section class="membership">
+        <h2>Exclusive Membership</h2>
+        <p>Subscribe for premium content and benefits.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 JEEBeatz. All rights reserved.</p>
+    </footer>
+<script src="script.js"></script>
+</body>
+</html><style>/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 15px 50px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: cyan;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: cyan;
+}
+
+.login-btn {
+    background-color: cyan;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(45deg, #00ffff, #ff00ff);
+    color: black;
+}
+
+.cta-button {
+    background-color: black;
+    color: cyan;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #1a1a1a;
+}
+/* Page Fade-in Animation */
+body {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Navigation Bar Hover Effect */
+.nav-links a {
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: cyan;
+    transition: 0.3s;
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Login Button Hover Glow */
+.login-btn {
+    transition: 0.3s ease-in-out;
+}
+
+.login-btn:hover {
+    box-shadow: 0 0 10px cyan;
+    transform: scale(1.1);
+}
+
+/* Hero Section Text Animation */
+.hero h1 {
+    animation: textGlow 2s infinite alternate;
+}
+
+@keyframes textGlow {
+    from { text-shadow: 0 0 10px cyan; }
+    to { text-shadow: 0 0 20px cyan; }
+}
+
+/* Smooth Section Reveal */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-in-out;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* JEEBeatz Fancy Logo */
+.logo {
+    font-family: 'Audiowide', cursive;
+    font-size: 28px;
+    color: cyan;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+    transition: 0.3s ease-in-out;
+}
+
+.logo:hover {
+    text-shadow: 0 0 15px cyan, 0 0 30px cyan;
+    transform: scale(1.1);
+}</style><script>document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section");
+
+    function revealSections() {
+        sections.forEach((section) => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            if (sectionTop < windowHeight - 100) {
+                section.classList.add("show");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", revealSections);
+    revealSections();
+});</script>
